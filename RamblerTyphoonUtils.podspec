@@ -23,7 +23,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'AssemblyTesting' do |subspec|
-    subspec.source_files = "Code/Production/AssemblyCollector.h", "Code/Production/AssemblyCollector/*.{h,m}", "Code/Testing/AssemblyTesting.h", "Code/Testing/AssemblyTesting/*.{h,m}"
+    subspec.source_files = "Code/Testing/AssemblyTesting.h", "Code/Testing/AssemblyTesting/*.{h,m}"
+    subspec.source_files.dependency 'RamblerTyphoonUtils/AssemblyCollector'
     subspec.framework = 'XCTest'
     subspec.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks' }
   end  
