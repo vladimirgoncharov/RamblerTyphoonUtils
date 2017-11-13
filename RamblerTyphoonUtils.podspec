@@ -12,20 +12,18 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/rambler-digital-solutions/RamblerTyphoonUtils"
   s.license          = 'MIT'
   s.authors           = { "Egor Tolstoy" => "e.tolstoy@rambler-co.ru", "Irina Dyagileva" => "i.dyagileva@rambler-co.ru", "Andrey Rezanov" => "a.rezanov@rambler-co.ru", "Andrey Zarembo-Godzyatsky" => "a.zarembo-godzyatsky@rambler-co.ru", "Aleksandr Sychev" => "a.sychev@rambler-co.ru" }
-  s.source           = { :git => "https://github.com/rambler-digital-solutions/RamblerTyphoonUtils.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/vladimirgoncharov/RamblerTyphoonUtils.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/rambler_ios'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-
-  s.source_files = "Code/Production/**/*.{h,m}"
 
   s.subspec 'AssemblyCollector' do |subspec|
     subspec.source_files = "Code/Production/AssemblyCollector.h", "Code/Production/AssemblyCollector/*.{h,m}"
   end
 
   s.subspec 'AssemblyTesting' do |subspec|
-    subspec.source_files = "Code/Testing/AssemblyTesting.h", "Code/Testing/AssemblyTesting/*.{h,m}"
+    subspec.source_files = "Code/Production/AssemblyCollector.h", "Code/Production/AssemblyCollector/*.{h,m}", "Code/Testing/AssemblyTesting.h", "Code/Testing/AssemblyTesting/*.{h,m}"
     subspec.framework = 'XCTest'
     subspec.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks' }
   end  
