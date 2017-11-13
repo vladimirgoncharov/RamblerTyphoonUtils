@@ -18,8 +18,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = "Code/Production/AssemblyCollector.h", "Code/Production/AssemblyCollector/*.{h,m}", "Code/Testing/AssemblyTesting.h", "Code/Testing/AssemblyTesting/*.{h,m}"
+  s.source_files = "Code/Testing/AssemblyTesting.h", "Code/Testing/AssemblyTesting/*.{h,m}"
   s.framework = 'XCTest'
   s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PLATFORM_DIR)/Developer/Library/Frameworks' }
   s.dependency 'OCMock', '~> 3'
+  s.dependency 'AssemblyCollector', :git => 'https://github.com/vladimirgoncharov/RamblerTyphoonUtils.git', :branch => 'separate-podspec'
 end
